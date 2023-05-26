@@ -1,0 +1,22 @@
+ALGORITHM are_vectors_orthogonal 
+FUNCTION dot_product(v1, v2):INTEGER
+  VAR ps:INTEGER
+BEGIN
+  ps := 0
+  FOR FROM i = 0 TO length(v1) - 1 STEP 1 DO
+  ps := ps + (v1[i] * v2[i])
+  END_FOR
+  Return ps
+END
+  VAR result:INTEGER
+  VAR ir:INTEGER
+  VAR v1:ARRAY_OF INTEGER[ir]
+  VAR v2:ARRAY_OF INTEGER[ir]
+BEGIN
+  result := dot_product(v1, v2)
+  IF result = 0 THEN
+    PRINT "Vectors are orthogonal."
+  ELSE
+    PRINT "Vectors are not orthogonal. Their dot product is", result.
+  END_IF
+END

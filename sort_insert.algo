@@ -1,0 +1,19 @@
+ALGORITHM sort_insert
+VAR n:INTEGER
+VAR arr: ARRAY_OF INTEGER[n]
+VAR i:INTEGER
+BEGIN
+i := 0
+WHILE (i<n) DO
+  IF arr[i] < arr[i-1] THEN
+    arr[i] := arr[i] + arr[i-1]
+    arr[i-1] := arr[i] - arr[i-1]
+    arr[i] := arr[i] - arr[i-1]
+    IF (i>1) THEN
+      i := i -1
+    END_IF
+  ELSE
+  i := i + 1
+  END_IF
+END_WHILE 
+END
